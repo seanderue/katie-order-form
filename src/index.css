@@ -1,0 +1,249 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  min-width: 600px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.form--button-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-nav-btn {
+  background-color: #fff9f9;
+  border: 0;
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #111827;
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: .75rem 1rem;
+  text-align: center;
+  text-decoration: none #D1D5DB solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.form-nav-btn:hover {
+  background-color: #f0cccc;
+}
+
+.form-nav-btn:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.form-nav-btn:focus-visible {
+  box-shadow: none;
+}
+
+.FormStatus-container {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.FormStatus-progress-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+}
+
+.FormStatus-text-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.FormStatus-text-spacer {
+  width: 67px;
+}
+
+.FormStatusBarSegment-container {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  min-height: 5px;
+  width: 100%;
+}
+
+.FormStatusBarSegment-progress {
+  background-color: #ACF1A1;
+  min-height: 5px;
+  width: 100%;
+}
+
+.FormStatus-step-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  cursor: pointer;
+}
+
+.FormStatus-step-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: white;
+  width: 35px;
+  height: 35px;
+  filter: drop-shadow(0, 4, 4, rgba(0, 0, 0, 1));
+}
+
+.FormStatus-step-number-active {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: #ACF1A1;
+  width: 35px;
+  height: 35px;
+  filter: drop-shadow(0, 4, 4, rgba(0, 0, 0, 1));
+}
+
+.FormStatus-step-text {
+  min-width: 90px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.form--container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  /* min-height: 500px;
+  width: 50%;
+  height: 50%; */
+  z-index: 10;
+}
+
+.form-input-container {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.TypeButton-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 10px 10px; 
+  height: 40%;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas: 
+    "type1 type2"
+    "type3 type4"; 
+  
+}
+
+.type1 { grid-area: type1; }
+.type2 { grid-area: type2; }
+.type3 { grid-area: type3; }
+.type4 { grid-area: type4; }
+
+.Form-header{
+  text-align: center;
+}
+
+.TypeButton {
+  width: 100%;
+  height: 10rem;
+  /* background-color: beige; */
+  /* border-radius: 500em; */
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.TypeButton:hover {
+  background-color: #f0cccc;
+}
+
+.TypeButton.clicked{
+  width: 100%;
+  height: 10em;
+  background: rgb(238,174,202);
+  background: linear-gradient(43deg, rgba(238,174,202,1) 0%, rgb(226, 148, 233) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.TypeButton-image {
+  padding: 5px 5px 5px 5px;
+  width: 100%;
+  height: 95%;
+  object-fit: cover;
+  object-position: 0% 25%;
+  user-select: none;
+}

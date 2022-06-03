@@ -1,0 +1,377 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #e3b5cb;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  
+  }
+  
+$primary: #11998e;
+$secondary: #ca38ef;
+$black: rgb(0, 0, 0);
+$gray: #9b9b9b;
+
+.alert__container {
+  position: relative;
+  padding: 0rem 1rem 0rem 1rem;
+  height: 3rem;
+  background: rgb(240, 116, 116);
+  z-index: 9999;
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.alert__text {
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid $gray;
+    outline: 0;
+    font-size: 1.3rem;
+    color: $black;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;   
+    margin-bottom: 15px; 
+}
+
+// .form__field::placeholder {
+//     color: transparent;
+// }
+
+.form__field:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+}
+
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: $gray;
+}
+
+.form__field:focus {
+    padding-bottom: 6px;  
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, $primary,$secondary);
+    border-image-slice: 1;
+}
+
+.form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: $primary;
+    font-weight:700;    
+}
+/* reset input */
+.form__field{
+    &:required,&:invalid { box-shadow:none; }
+}
+
+.form__group {
+    position: relative;
+    display:grid;
+    width: 50%;
+    min-width: 600px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    overflow-y: auto;
+
+    
+  }
+  
+  .form__button-container {
+    position: relative;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .form__button-container.right {
+    justify-content: flex-end;
+  }
+  
+  .form__nav-btn {
+    background-color: #fff9f9;
+    border: 0;
+    border-radius: .5rem;
+    box-sizing: border-box;
+    color: #111827;
+    font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    padding: .75rem 1rem;
+    text-align: center;
+    text-decoration: none #D1D5DB solid;
+    text-decoration-thickness: auto;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .form__nav-btn:hover {
+    background-color: #f0cccc;
+  }
+  
+  .form__nav-btn:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+  
+  .form__nav-btn:focus-visible {
+    box-shadow: none;
+  }
+  
+  input[type=file]::file-selector-button {
+    background-color: #fff9f9;
+    border: 0;
+    border-radius: .5rem;
+    box-sizing: border-box;
+    color: #111827;
+    font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: .75rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    padding: .5rem .75rem;
+    text-align: center;
+    text-decoration: none #D1D5DB solid;
+    text-decoration-thickness: auto;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    }
+
+input[type=file]::file-selector-button:hover {
+    background-color: #f0cccc;
+    }
+
+input[type=file]::file-selector-button:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    }
+
+input[type=file]::file-selector-button:focus-visible {
+    box-shadow: none;
+    }
+
+input[type=file] {
+    font-size: .75rem;
+    margin-bottom: 30px;
+}
+
+.fileUpload__label {
+    color: $gray;
+}
+  .FormStatus-container {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .FormStatus-progress-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+  }
+  
+  .FormStatus-text-container {
+    display: flex;
+    width: 98%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .FormStatus-text-spacer {
+    width: 67px;
+  }
+  
+  .FormStatusBarSegment-container {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    min-height: 5px;
+    width: 100%;
+  }
+  
+  .FormStatusBarSegment-progress {
+    background-color: #ACF1A1;
+    min-height: 5px;
+    width: 100%;
+  }
+  
+  .FormStatus-step-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .FormStatus-step-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: white;
+    width: 35px;
+    height: 35px;
+    filter: drop-shadow(0, 4, 4, rgba(0, 0, 0, 1));
+  }
+  
+  .FormStatus-step-number-active {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #ACF1A1;
+    width: 35px;
+    height: 35px;
+    filter: drop-shadow(0, 4, 4, rgba(0, 0, 0, 1));
+  }
+  
+  .FormStatus-step-text {
+    min-width: 90px;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
+  canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .form__container {
+    position: absolute;
+    display: grid;
+    justify-content: center;
+    align-content: flex-start;
+    transform: translateY(0%);
+    grid-auto-flow: row;
+    gap: 1rem;
+    height: 80%;
+    // width: 100%;
+    z-index: 10;
+  }
+  
+  .form__input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .TypeButton-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 10px 10px; 
+    height: 40%;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas: 
+      "type1 type2"
+      "type3 type4"; 
+    
+  }
+  
+  .type1 { grid-area: type1; }
+  .type2 { grid-area: type2; }
+  .type3 { grid-area: type3; }
+  .type4 { grid-area: type4; }
+  
+  .Form-header{
+    text-align: center;
+  }
+  
+  .TypeButton {
+    width: 90%;
+    height: 10rem;
+    /* background-color: beige; */
+    /* border-radius: 500em; */
+    margin-left: 0em;
+    margin-right: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .TypeButton:hover {
+    background-color: #f0cccc;
+  }
+  
+  .TypeButton.clicked{
+    width: 100%;
+    height: 10em;
+    background: rgb(238,174,202);
+    background: linear-gradient(43deg, rgba(238,174,202,1) 0%, rgb(226, 148, 233) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .TypeButton-image {
+    padding: 5px 5px 5px 5px;
+    width: 100%;
+    height: 95%;
+    object-fit: cover;
+    object-position: 0% 25%;
+    user-select: none;
+  }
+  
