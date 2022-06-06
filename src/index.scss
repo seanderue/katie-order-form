@@ -387,19 +387,19 @@ input[type=file] {
 }
  
 .card--0 .card__img, .card--0 .card__img--hover, .card--0 .card__img__overlay-clicked {
-background-image: url(../public/cookie.jpeg);
+background-image: url(/cookie.jpeg);
 }
 
 .card--1 .card__img, .card--1 .card__img--hover, .card--1 .card__img--clicked, .card--1 .card__img__overlay-clicked {
-  background-image: url(../public/cakesicles.jpeg);
+  background-image: url(/cakesicles.jpeg);
 }
 
 .card--2 .card__img, .card--2 .card__img--hover, .card--2 .card__img--clicked, .card--2 .card__img__overlay-clicked {
-  background-image: url(../public/cake.jpeg);
+  background-image: url(/cake.jpeg);
 }
 
 .card--3 .card__img, .card--3 .card__img--hover, .card--3 .card__img--clicked, .card--3 .card__img__overlay-clicked{
-  background-image: url(../public/cupcake.jpeg);
+  background-image: url(/cupcake.jpeg);
 }
 
 .card__like {
