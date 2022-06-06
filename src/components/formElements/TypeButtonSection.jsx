@@ -1,47 +1,47 @@
 import React, { useState } from 'react'
 import TypeButton from './TypeButton'
-import cupcakeImage from './cupcake.jpeg'
-import cakesiclesImage from './cakesicles.jpeg'
-import cakeImage from './cake.jpeg'
-import cookieImage from './cookie.jpeg'
+
 
 
 export default function TypeButtonSection({newType, setNewType}) {
 
   const types = [
     { name: 'cookie',
-      photo: cookieImage, 
-      altText: 'Cookie',
-      selected: false 
+      title: 'Cookies / Cookie Cake',
+      selected: false,
+      price: '12 for $24 / $35' 
     },
 
     { name: 'cakesicle',
-      photo: cakesiclesImage,
-      altText: 'Cakesicle',
-      selected: false },
+      title: 'Cakesicles',
+      selected: false,
+      price: '$3 per Cakesicle' },
       
     { name: 'cake',
-      photo: cakeImage,
-      altText: 'Cake',
-      selected: false },
+      title: 'Cake',
+      selected: false, 
+      price: '$38 - $60' },
 
-    { name: 'cupcake', 
-      photo: cupcakeImage, 
-      altText: 'Cupcake',
-      selected: false 
+    { name: 'cupcake',
+      title: 'Cupcakes',
+      selected: false ,
+      price: '$15 - $27'
     },
 
   ]
 
   const handleClick = (name) => {
     setNewType(name)
+    console.log(newType)
   }
 
   const checkSelected = (name) => {
     if (name === newType) {
+      console.log(true)
       return true
     }
     else {
+      console.log(false)
       return false
     }
   }
@@ -50,8 +50,9 @@ export default function TypeButtonSection({newType, setNewType}) {
     return (
       <TypeButton
         key={index}
-        name={type.name}
-        photo={type.photo}
+        index={index}
+        price={type.price}
+        title={type.title}
         altText={type.altText}
         selected={checkSelected(type.name)}
         onClick={() => handleClick(type.name)}

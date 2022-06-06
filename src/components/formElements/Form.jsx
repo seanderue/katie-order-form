@@ -80,37 +80,37 @@ export default function Form() {
         <div className='form__container'>
             <FormStatus
                 pageNumber = {pageNumber}/>
-            <Alert message="We've got a special on our popsicles"/>
-            <form className='form__group field'onSubmit={handleSubmit}>
-                {pageNumber === 1 &&
-                    <TypeButtonSection 
+            {/* <Alert message="We've got a special on our popsicles"/> */}
+                <form className='form__group field'onSubmit={handleSubmit}>
+                    {pageNumber === 1 &&
+                        <TypeButtonSection 
                         newType={newType}
                         setNewType={setNewType}
-                    />}
-                {pageNumber === 2 && 
-                <FormCustomization
+                        />}
+                    {pageNumber === 2 && 
+                    <FormCustomization
                     setNewOccasion={setNewOccasion}
                     setNewTheme={setNewTheme}
                     setNewDescription={setNewDescription}
                     setNewQuantity={setNewQuantity}  
                     />}
-                {pageNumber === 3 && 
-                <FormContact 
+                    {pageNumber === 3 && 
+                    <FormContact 
                     setNewName={setNewName}
                     setNewEmail={setNewEmail}
                     setNewPhone={setNewPhone}
                     setNewPickup={setNewPickup}
                     />}
-                {pageNumber === 4 &&
-                <FormSubmitted />}
-                {<div className={pageNumber >= 2 ? 'form__button-container' : 'form__button-container right'}>
-                    {pageNumber >= 2 && pageNumber < 4 && <button className='form__nav-btn' onClick={handlePreviousPage}>Previous Page </button>}
-                    {pageNumber < 3 && <button className='form__nav-btn' onClick={handleNextPage}>Next Page </button>}
-                    {pageNumber === 3 && <button className='form__nav-btn'>Submit Order</button>}
-                    {pageNumber === 4 && <button className='form__nav-btn'>Restart Order</button>}
-                    </div>
-                }
-            </form>
+                    {pageNumber === 4 &&
+                    <FormSubmitted />}
+                    {<div className={pageNumber >= 2 ? 'form__button-container' : 'form__button-container right'}>
+                        {pageNumber >= 2 && pageNumber < 4 && <button className='form__nav-btn' onClick={handlePreviousPage}>Previous Page </button>}
+                        {pageNumber < 3 && <button className='form__nav-btn' onClick={handleNextPage}>{pageNumber == 1 && 'Customize'}{pageNumber >= 2 && 'Contact'}</button>}
+                        {pageNumber === 3 && <button className='form__nav-btn'>Submit Order</button>}
+                        {pageNumber === 4 && <button className='form__nav-btn'>Restart Order</button>}
+                        </div>
+                    }
+                </form>
         </div>
     </> 
   )
