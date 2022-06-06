@@ -7,8 +7,6 @@ import * as THREE from 'three'
 export default function Cookie({ z }) {
     const ref = useRef()
     const { nodes, materials } = useGLTF('/models/cookie-v1-transformed.glb')
-    console.log(nodes)
-    console.log(materials)
     const { viewport, camera } = useThree()
     const { width, height } = viewport.getCurrentViewport(camera, [0, 0, z])
     
