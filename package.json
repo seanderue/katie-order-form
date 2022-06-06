@@ -11,7 +11,7 @@
     "@react-spring/three": "^9.4.5",
     "@react-three/drei": "^9.11.0",
     "@react-three/fiber": "^8.0.17",
-    "@react-three/postprocessing": "^2.3.2",
+    "@react-three/postprocessing": "./react-three-postprocessing-v2.3.2-node-fix.0.tgz",
     "@types/three": "^0.140.0",
     "firebase": "^9.8.1",
     "gsap": "^3.10.4",
