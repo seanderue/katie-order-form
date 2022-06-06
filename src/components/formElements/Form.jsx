@@ -6,7 +6,7 @@ import FormCustomization from './FormCustomization'
 import FormStatus from './FormStatus'
 import FormContact from './FormContact'
 import FormSubmitted from './FormSubmitted'
-import Alert from './alert'
+import Alert from './Alert'
 
 
 export default function Form() {

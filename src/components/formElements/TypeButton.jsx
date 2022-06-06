@@ -33,7 +33,7 @@ export default function TypeButton({selected, price, altText, onClick, title, in
     <div className={selected ? "card__img" : "card__img"}></div>
     
     <div className="card_link">
-      <div className={selected && 'selected'}>
+      <div className={selected ? 'selected' : undefined}>
         <div className={selected ? "card__img__overlay-clicked" : "card__img--hover"}></div>
       </div>
     </div>
