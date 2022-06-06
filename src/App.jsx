@@ -20,13 +20,13 @@ export default function App({ count = 150, depth = 80}) {
             <Cookie key={i} z={-(i / count) * depth - 15} scale={1}/>
           ))}
         </Suspense>
-        <EffectComposer>
+        {/* <EffectComposer>
           <DepthOfField
             target={[0,0,depth / 4]}
             focalLength={0.5}
             bokehScale={7}
             height={700}/>
-        </EffectComposer>
+        </EffectComposer> */}
 
       </Canvas>
     </>
