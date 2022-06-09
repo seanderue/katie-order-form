@@ -1,26 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 export default function TypeButton({selected, price, altText, onClick, title, index}) {
-
-//   .card:hover .card__img--hover {
-//     height: 100%;
-//     opacity: 0.3;
-// }
-
-// .card:hover .card__info {
-//     background-color: transparent;
-//     position: relative;
-// }
-
-// .card:hover .card__info-hover {
-//     opacity: 1;
-// }
-
-// .card__img--clicked {
-//     height: 100%;
-//     opacity: 0.3;
-// }
-
 
   return (
     <div className={`card card--${index}`} onClick={onClick}> 

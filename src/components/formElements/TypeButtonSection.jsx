@@ -6,23 +6,23 @@ import TypeButton from './TypeButton'
 export default function TypeButtonSection({newType, setNewType}) {
 
   const types = [
-    { name: 'cookie',
+    { name: 'Cookie',
       title: 'Cookies / Cookie Cake',
       selected: false,
       price: '12 for $24 / $35' 
     },
 
-    { name: 'cakesicle',
+    { name: 'Cakesicle',
       title: 'Cakesicles',
       selected: false,
       price: '$3 per Cakesicle' },
       
-    { name: 'cake',
+    { name: 'Cake',
       title: 'Cake',
       selected: false, 
       price: '$38 - $60' },
 
-    { name: 'cupcake',
+    { name: 'Cupcake',
       title: 'Cupcakes',
       selected: false ,
       price: '$15 - $27'
@@ -32,16 +32,13 @@ export default function TypeButtonSection({newType, setNewType}) {
 
   const handleClick = (name) => {
     setNewType(name)
-    console.log(newType)
   }
 
   const checkSelected = (name) => {
     if (name === newType) {
-      console.log(true)
       return true
     }
     else {
-      console.log(false)
       return false
     }
   }

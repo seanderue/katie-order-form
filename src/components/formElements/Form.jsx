@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { db } from '../../firebase-config'
 import { collection, getDocs, addDoc } from 'firebase/firestore'
 import TypeButtonSection from './TypeButtonSection'
-import FormCustomization from './FormCustomization'
+import FormFields from './FormFields'
 import FormStatus from './FormStatus'
 import FormContact from './FormContact'
 import FormSubmitted from './FormSubmitted'
@@ -16,6 +16,7 @@ export default function Form() {
     const [newName, setNewName] = useState('')
     const [newType, setNewType] = useState('')
     const [newQuantity, setNewQuantity] = useState()
+    const [newFlavor, setNewFlavor] = useState('')
     const [newDescription, setNewDescription] = useState('')
     const [newTheme, setNewTheme] = useState('')
     const [newOccasion, setNewOccasion] = useState('')
@@ -32,6 +33,7 @@ export default function Form() {
             {
             name: newName,
             type: newType,
+            flavor: newFlavor,
             quantity: newQuantity,
             description: newDescription,
             theme: newTheme,
@@ -68,10 +70,10 @@ export default function Form() {
         }
     }
 
-    const handlePreviousPage = (event) => {
+    const handleRestartPage = (event) => {
         event.preventDefault()
         if(pageNumber > 1) {
-            setPageNumber(pageNumber - 1)
+            setPageNumber(1)
         }
     }
 
@@ -80,34 +82,32 @@ export default function Form() {
         <div className='form__container'>
             <FormStatus
                 pageNumber = {pageNumber}/>
-            {/* <Alert message="We've got a special on our popsicles"/> */}
+            {/* <Alert message={pageNumber}/> */}
                 <form className='form__group field'onSubmit={handleSubmit}>
                     {pageNumber === 1 &&
                         <TypeButtonSection 
-                        newType={newType}
-                        setNewType={setNewType}
+                            newType={newType}
+                            setNewType={setNewType}
                         />}
                     {pageNumber === 2 && 
-                    <FormCustomization
-                    setNewOccasion={setNewOccasion}
-                    setNewTheme={setNewTheme}
-                    setNewDescription={setNewDescription}
-                    setNewQuantity={setNewQuantity}  
-                    />}
-                    {pageNumber === 3 && 
-                    <FormContact 
-                    setNewName={setNewName}
-                    setNewEmail={setNewEmail}
-                    setNewPhone={setNewPhone}
-                    setNewPickup={setNewPickup}
-                    />}
-                    {pageNumber === 4 &&
+                        <FormFields
+                            newType={newType}
+                            setNewOccasion={setNewOccasion}
+                            setNewTheme={setNewTheme}
+                            setnewFlavor={setNewFlavor}
+                            setNewDescription={setNewDescription}
+                            setNewQuantity={setNewQuantity}  
+                            setNewName={setNewName}
+                            setNewEmail={setNewEmail}
+                            setNewPhone={setNewPhone}
+                            setNewPickup={setNewPickup}
+                        />}
+                    {pageNumber === 3 &&
                     <FormSubmitted />}
                     {<div className={pageNumber >= 2 ? 'form__button-container' : 'form__button-container right'}>
-                        {pageNumber >= 2 && pageNumber < 4 && <button className='form__nav-btn' onClick={handlePreviousPage}>Previous Page </button>}
-                        {pageNumber < 3 && <button className='form__nav-btn' onClick={handleNextPage}>{pageNumber == 1 && 'Customize'}{pageNumber >= 2 && 'Contact'}</button>}
-                        {pageNumber === 3 && <button className='form__nav-btn'>Submit Order</button>}
-                        {pageNumber === 4 && <button className='form__nav-btn'>Restart Order</button>}
+                        {pageNumber >= 2  && <button className='form__nav-btn' onClick={handleRestartPage}>Restart Order </button>}
+                        {pageNumber <= 1 && <button className='form__nav-btn' onClick={handleNextPage}>Customize</button>}
+                        {pageNumber === 2 && <button className='form__nav-btn'>Submit Order</button>}
                         </div>
                     }
                 </form>

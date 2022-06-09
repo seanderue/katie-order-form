@@ -17,6 +17,7 @@ $primary: #11998e;
 $secondary: #ca38ef;
 $black: rgb(0, 0, 0);
 $gray: #9b9b9b;
+$form__width: 640px;
 
 .alert__container {
   position: relative;
@@ -197,6 +198,7 @@ input[type=file] {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    width: $form__width;
   }
   
   .FormStatus-progress-container {
@@ -213,7 +215,7 @@ input[type=file] {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
+    // cursor: pointer;
   }
   
   .FormStatus-text-spacer {
@@ -239,7 +241,7 @@ input[type=file] {
     flex-direction: column;
     justify-content: center; 
     align-items: center;
-    cursor: pointer;
+    // cursor: pointer;
   }
   
   .FormStatus-step-number {
@@ -296,13 +298,12 @@ input[type=file] {
   .form__container {
     position: absolute;
     display: grid;
-    justify-content: center;
+    justify-items: center;
     align-content: flex-start;
     transform: translateY(0%);
     grid-auto-flow: row;
     gap: 1rem;
     height: 80%;
-    // width: 100%;
     z-index: 10;
   }
   

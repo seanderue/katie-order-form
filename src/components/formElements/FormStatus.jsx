@@ -32,7 +32,7 @@ export default function FormStatus({pageNumber}) {
                     <div className='FormStatus-text-spacer'></div>
                 <div className='FormStatus-step-text'>Customization</div>
                     <div className='FormStatus-text-spacer'></div>
-                <div className='FormStatus-step-text'>Contact Info</div>
+                <div className='FormStatus-step-text'>Submit Order</div>
             </div>
         </div>
   )

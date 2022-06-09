@@ -1,5 +1,4 @@
 import React from 'react'
-import FormTextArea from './FormTextArea'
 import FormInput from './FormInput'
 
 export default function FormContact({setNewName, setNewEmail, setNewPhone, setNewPickup}) {
@@ -17,7 +16,6 @@ export default function FormContact({setNewName, setNewEmail, setNewPhone, setNe
         <FormInput
             placeholder="Phone Number"
             updateState={setNewPhone}
-
         />
         <FormInput
             placeholder="When would you like to pick up? (Date and Time)"
