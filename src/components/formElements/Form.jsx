@@ -77,12 +77,27 @@ export default function Form() {
         }
     }
 
+    const [width, setWidth] = useState(window.innerWidth)
+    const [height, setHeight] = useState(window.innerHeight)
+
+    const handleResize = () => {
+        setWidth(window.innerWidth)
+        setHeight(window.innerHeight)
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize)
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    }, [])
+
     return (
     <>
         <div className='form__container'>
             <FormStatus
                 pageNumber = {pageNumber}/>
-            {/* <Alert message={pageNumber}/> */}
+            <Alert message={`${width} x ${height}`}/>
                 <form className='form__group field'onSubmit={handleSubmit}>
                     {pageNumber === 1 &&
                         <TypeButtonSection 
