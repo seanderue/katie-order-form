@@ -2,7 +2,7 @@ import React from 'react'
 import FormInput from './FormInput'
 import FormTextArea from './FormTextArea'
 
-export default function FormCustomization({newType, setNewDescription, setNewTheme, setNewQuantity, setNewOccasion, setNewFlavor}) {
+export default function FormCustomization({newType, setNewDescription, setNewTheme, setNewQuantity, setNewOccasion, setNewFlavor, setImageUpload}) {
 
 
   return (

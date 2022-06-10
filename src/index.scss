@@ -17,7 +17,10 @@ $primary: #11998e;
 $secondary: #ca38ef;
 $black: rgb(0, 0, 0);
 $gray: #9b9b9b;
-$form__width: 640px;
+$form__width-desktop: 640px;
+$form__width-tablet: 640px;
+
+
 
 .alert__container {
   position: relative;
@@ -93,8 +96,7 @@ $form__width: 640px;
     position: relative;
     justify-self: center;
     display:grid;
-    width: 50%;
-    min-width: 600px;
+    width: 600px;
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -198,7 +200,7 @@ input[type=file] {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: $form__width;
+    width: $form__width-desktop;
   }
   
   .FormStatus-progress-container {
@@ -577,4 +579,48 @@ border-bottom-right-radius: 12px;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   top: 0;
+}
+
+//Tablets
+@media only screen and (max-width: 768px) and (max-width: 1024px) {
+ 
+  $form__width-mobile: 200px;
+
+  .form__container {
+    position: absolute;
+    display: grid;
+    justify-items: center;
+    align-content: flex-start;
+    transform: translateY(0%);
+    grid-auto-flow: row;
+    gap: 1rem;
+    height: 80%;
+    z-index: 10;
+  }
+
+  .form__group {
+    width: $form__width-mobile;
+  }
+}
+
+//Phones
+@media only screen and (min-width:200px) and (max-width: 768px) {
+
+  $form__width-mobile: 100px;
+
+  .form__container {
+    position: absolute;
+    display: grid;
+    justify-items: center;
+    align-content: flex-start;
+    transform: translateY(0%);
+    grid-auto-flow: row;
+    gap: 1rem;
+    height: 80%;
+    z-index: 10;
+  }
+
+  .form__group{
+    max-width: 300px;
+  }
 }

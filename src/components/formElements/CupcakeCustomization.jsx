@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function CupcakeCustomization() {
+export default function CupcakeCustomization({setNewFlavor, setNewOccasion, setNewTheme, setNewDescription}) {
   return (
       <>
         <FormInput 

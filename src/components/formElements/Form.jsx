@@ -101,6 +101,7 @@ export default function Form() {
                             setNewEmail={setNewEmail}
                             setNewPhone={setNewPhone}
                             setNewPickup={setNewPickup}
+                            setNewFlavor={setNewFlavor}
                         />}
                     {pageNumber === 3 &&
                     <FormSubmitted />}
