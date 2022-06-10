@@ -95,9 +95,9 @@ export default function Form() {
     return (
     <>
         <div className='form__container'>
-            <FormStatus
+            {/* <FormStatus
                 pageNumber = {pageNumber}/>
-            <Alert message={`${width} x ${height}`}/>
+            <Alert message={`${width} x ${height}`}/> */}
                 <form className='form__group field'onSubmit={handleSubmit}>
                     {pageNumber === 1 &&
                         <TypeButtonSection 

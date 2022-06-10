@@ -29,7 +29,7 @@ export default function FormStatus({pageNumber}) {
             </div>
             <div className='FormStatus-text-container'>
                 <div className='FormStatus-step'>
-                    <p className='FormStatus-step-text'>Baked Good</p>
+                    <p className='FormStatus-step-text' id='text1'>Baked Good</p>
                 </div>
                     <div className='FormStatus-text-spacer'></div>
                 <div className='FormStatus-step'>
