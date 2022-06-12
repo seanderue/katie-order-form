@@ -18,7 +18,8 @@ export default function App({ count = 150, depth = 80}) {
       <Menu 
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}/>
-      <Form />
+      <Form
+        menuOpen={menuOpen} />
 
       <Canvas id="three-canvas-container" gl={{ alpha: false }} camera={{ near: 0.01, far: 110, fov: 30}}>
         <color attach="background" args={['#ffe6e6']} />

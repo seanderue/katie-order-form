@@ -8,7 +8,7 @@ import FormSubmitted from './FormSubmitted'
 import Alert from './Alert'
 
 
-export default function Form() {
+export default function Form({menuOpen}) {
 
     const [pageNumber, setPageNumber] = useState(1)
 
@@ -93,10 +93,10 @@ export default function Form() {
 
     return (
     <>
-        <div className='form__container'>
+        <div className={menuOpen? 'form__container menu-open' : 'form__container'}>
             {/* <FormStatus
-                pageNumber = {pageNumber}/>
-            <Alert message={`${width} x ${height}`}/> */}
+                pageNumber = {pageNumber}/>*/}
+            <Alert message={`${width} x ${height}`}/>
                 <form className='form__group field'onSubmit={handleSubmit}>
                     {pageNumber === 1 &&
                         <TypeButtonSection 
