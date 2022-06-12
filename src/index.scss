@@ -494,7 +494,6 @@ top: 0;
 }
 
 .card__img__overlay-clicked {
-  background-color: #11998e;
   transition: 0.2s all ease-out;
   background-size: cover;
   background-position: center;
@@ -563,7 +562,7 @@ border-bottom-right-radius: 12px;
     margin-top: 5px;
     margin-bottom: 10px;
     font-family: 'Roboto Slab', serif;
-    font-size: calc(.3em + 1.5vw);
+    font-size: calc(.2em + 1.25vw);
 }
 
 .card__by {
@@ -593,7 +592,6 @@ border-bottom-right-radius: 12px;
 }
 
 .selected {
-  background-color: rgba(0, 255, 89, 0.3);
   transition: 0.2s all ease-out;
   width: 100%;
   height: 100%;
@@ -601,6 +599,8 @@ border-bottom-right-radius: 12px;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   top: 0;
+  box-sizing: border-box;
+  border: 5px solid rgba(0, 255, 89, 0.3);
 }
 
 
@@ -787,8 +787,7 @@ display: flex;
 align-content: center;
 justify-content: center;
 align-items: center;
-margin-top: 2em;
-height: 30%;
+margin-top: 25vh;
 font-size: .75rem;
 font-family: 'Poppins';
 font-weight: 400;
