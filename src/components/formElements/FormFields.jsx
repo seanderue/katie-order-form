@@ -5,7 +5,7 @@ import { v4 } from 'uuid'
 import FormContact from './FormContact'
 import FormCustomization from './FormCustomization'
 
-export default function FormFields({ newType, setNewDescription, setNewQuantity, setNewTheme, setNewOccasion, setNewName, setNewEmail, setNewPhone, setNewPickup}) {
+export default function FormFields({ newType, setNewDescription, setNewQuantity, setNewTheme, setNewOccasion, setNewFlavor, setNewName, setNewEmail, setNewPhone, setNewPickup}) {
     const [imageUpload, setImageUpload] = useState(null)
     const uploadImage = () => {
         if (imageUpload == null) return
@@ -25,7 +25,7 @@ export default function FormFields({ newType, setNewDescription, setNewQuantity,
     return (
     
     <div className='form__input-container'>
-        <h1 style={{'text-align': 'center'}}>New {newType} Order:</h1>
+        <h1 style={{'textAlign': 'center'}}>New {newType} Order:</h1>
         <h2>Customize your order:</h2>
         <FormCustomization 
             newType={newType}
@@ -33,6 +33,7 @@ export default function FormFields({ newType, setNewDescription, setNewQuantity,
             setNewQuantity={setNewQuantity}
             setNewTheme={setNewTheme}
             setNewOccasion={setNewOccasion}
+            setNewFlavor={setNewFlavor}
         />
         
         <h2>Contact Info:</h2>

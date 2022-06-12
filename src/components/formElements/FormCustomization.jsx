@@ -32,7 +32,7 @@ export default function FormCustomization({newType, setNewDescription, setNewThe
                 onChange={e => setNewQuantity(e.target.value)}/>
 
 
-            <label className="fileUpload__label"for="fileUpload">Reference Photo (optional)</label>
+            <label className="fileUpload__label" htmlFor="fileUpload">Reference Photo (optional)</label>
             <input
                 className='form__field'
                 type="file"
