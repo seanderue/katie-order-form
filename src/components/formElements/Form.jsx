@@ -96,7 +96,7 @@ export default function Form({menuOpen}) {
         <div className={menuOpen? 'form__container menu-open' : 'form__container'}>
             {/* <FormStatus
                 pageNumber = {pageNumber}/>*/}
-            <Alert message={`${width} x ${height}`}/>
+            {/* <Alert message={`${width} x ${height}`}/> */}
                 <form className='form__group field'onSubmit={handleSubmit}>
                     {pageNumber === 1 &&
                         <TypeButtonSection 
