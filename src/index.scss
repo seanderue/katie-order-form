@@ -1108,11 +1108,28 @@ transition: background-color .4s ease-in-out;
   }
 
   .form__group {
+    margin-top: 10%;
     width: 80%;
+    height: 95%;
+  }
+  
+  .form__button-container {
+    width: 100%;
+    margin-top: 5%;
+  }
+
+  .form__field {
+    font-size: 1em;
+    
+  }
+
+  .card__price-info {
+   margin-right: 10%;
+   text-align: end;
   }
 
   .Form-header {
-    font-size: 1.4rem;
+    font-size: calc(1.4rem);
   }
 
   .FormStatus-container {

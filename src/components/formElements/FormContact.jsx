@@ -17,8 +17,10 @@ export default function FormContact({setNewName, setNewEmail, setNewPhone, setNe
             placeholder="Phone Number"
             updateState={setNewPhone}
         />
+        
+        <label className="fileUpload__label" htmlFor="fileUpload">When would you like to pick it up?</label>
         <FormInput
-            placeholder="When would you like to pick up? (Date and Time)"
+            placeholder="(Date and Time)"
             updateState={setNewPickup}
 
         />
