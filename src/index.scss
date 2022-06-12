@@ -109,7 +109,7 @@ $form__width-tablet: 640px;
   
   .form__button-container {
     position: relative;
-    margin-top: 25px;
+    margin-top: 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -307,12 +307,13 @@ input[type=file] {
   .form__container {
     position: absolute;
     display: grid;
-    justify-items: center;
     align-content: flex-start;
+    justify-content: center;
     transform: translateY(0%);
     grid-auto-flow: row;
     gap: 1rem;
     height: 80%;
+    max-width: 60vw;
     z-index: 10;
   }
 
@@ -337,20 +338,19 @@ input[type=file] {
   }
   
   .TypeButton-container {
+    margin-top: 20px;
     display: grid;
-    margin-top: 10px;
     justify-self: center;
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 1fr 1fr; 
-    gap: 25px 0px;
-    width: 90%;
-    height: 100%;
     justify-items: center;
     align-items: center;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 20px 20px;
+    width: 90%;
+    height: 100%;
     grid-template-areas: 
       "type1 type2"
       "type3 type4"; 
-    
   }
   
   .type1 { grid-area: type1; }
@@ -524,7 +524,7 @@ border-top-right-radius: 12px;
 .card {
   transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
   background-color: #fff;
-    width: 75%;
+  width: 100%;
   position: relative;
   border-radius: 12px;
   overflow: hidden;
@@ -553,7 +553,7 @@ border-bottom-right-radius: 12px;
 .card__category {
     font-family: 'Raleway', sans-serif;
     text-transform: uppercase;
-    font-size: 13px;
+    font-size: calc(.2em + 1vw);
     letter-spacing: 2px;
     font-weight: 500;
   color: #868686;
@@ -563,6 +563,7 @@ border-bottom-right-radius: 12px;
     margin-top: 5px;
     margin-bottom: 10px;
     font-family: 'Roboto Slab', serif;
+    font-size: calc(.3em + 1.5vw);
 }
 
 .card__by {
@@ -683,7 +684,7 @@ transition: opacity .2s ease-in-out;
 }
 
 .menu__header {
-font-size: 7rem;
+font-size: calc(5rem + .5vw);
 line-height: 90%;
 font-family: 'Poppins';
 margin: 0;
@@ -700,15 +701,16 @@ color:#868686
 }
 
 .menu__content {
-width: 50%;
+width: 70%;
 height: 100%;
 font-family: 'Poppins', sans-serif;
-font-size: 18px;
+font-size: calc(.5rem + 1vw);
 }
 
 .menu__content__footer {
 display: flex;
 justify-content: space-between;
+font-size: calc(.5rem + 1vw);
 }
 
 a{
@@ -980,73 +982,207 @@ transition: background-color .4s ease-in-out;
 //Tablets
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
 
+  .menu__container {
+    margin-top: 20%;
+    position: absolute;
+    opacity: 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: .5em;
+    height: 100vh;
+  }
+  
+  .menu__header {
+    font-size: calc(1.5rem + 4vw);
+  }
+
+  .menu__content {
+    width: 90%;
+  }
+
+  .menu__content__bio {
+    font-size: calc(.5rem + 1.25vw);
+  }
+
+  .menu__content__footer {
+    font-size: calc(.5rem + 1.5vw);
+  }
+
+  .menu__madeby {
+    height: 10%;
+  }
+
   .form__container {
     position: absolute;
     display: grid;
     justify-items: center;
-    align-content: flex-start;
+    justify-content: center;
     transform: translateY(0%);
     grid-auto-flow: row;
     gap: 1rem;
-    height: 80%;
+    max-width: 60vw;
     z-index: 10;
   }
 
   .form__group {
-    width: 600px;
+    margin: 2em;
   }
+
+  .form__submit-container {
+    max-height: 10%;
+  }
+
+  .TypeButton-container {
+    width: 90%;
+    margin-top: 0;
+    gap:20px;
+  }
+
+  .card {
+    width: 100%;
+    margin-top: 0;;
+  }
+
+  .card__category {
+    font-size: calc(.2em + 1vw);
+  }
+
+  .card__title {
+    font-size: calc(.3em + 1.5vw);
+  }
+
+  .form__group {
+    margin-top: 0%;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .form__button-container {
+    width: 100%;
+    margin-top: 5%;
+  }
+
+  .form__field {
+    font-size: 1em;
+    
+  }
+  
+  .card__price-info {
+    margin-right: 10%;
+    text-align: end;
+  }
+  
+  .form__nav-btn {
+    padding: .5rem .75rem;
+  }
+
+  .Form-header {
+    font-size: calc(.9rem + 2vw);
+  }
+
 }
 
 // Medium to Large Phones
 @media only screen and (min-width:375px) and (max-width: 767px) {
 
-  $form__width-mobile: 100px;
+  .menu__container {
+    margin-top: 10%;
+    position: absolute;
+    opacity: 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: .5em;
+    height: 100vh;
+  }
+
+  .menu__content {
+    width: 90%;
+  }
+
+  .menu__content__bio {
+    font-size: calc(.5rem + 1.5vw);
+  }
+
+  .menu__header {
+    font-size: calc(1.5rem + 4vw);
+  }
+
+  .menu__madeby {
+    height: 10%;
+  }
+  
+  .menu__content__footer {
+    font-size: calc(.5rem + 1.5vw);
+  }
 
   .form__container {
     position: absolute;
     display: grid;
     justify-items: center;
-    align-content: center;
+    justify-content: center;
     transform: translateY(0%);
     grid-auto-flow: row;
     gap: 1rem;
-    height: 50%;
-    background-color: #000;
-    width: 80vw;
+    // height: 80%;
+    max-width: 100vw;
     z-index: 10;
   }
 
-  .form__group {
+  .TypeButton-container {
     width: 100%;
+    margin-top: 0;
+    gap:10px;
+  }
+
+  .card {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .card__category {
+    font-size: calc(.2em + 1.5vw);
+  }
+
+  .card__title {
+    font-size: calc(.3em + 2.15vw);
+  }
+
+  .form__group {
+    margin-top: 5%;
+    width: 80%;
+    height: 95%;
+  }
+  
+  .form__button-container {
+    width: 100%;
+    margin-top: 5%;
+  }
+
+  .form__field {
+    font-size: 1em;
+    
+  }
+  
+  .card__price-info {
+    margin-right: 10%;
+    text-align: end;
+  }
+  
+  .form__nav-btn {
+    padding: .5rem .75rem;
   }
 
   .Form-header {
-    font-size: 1.4rem;
+    font-size: calc(1.4rem + 2vw);
   }
 
-  .FormStatus-container {
-    width: 90%;
-    // padding-right: 10%;
-    // padding-left: 10%;
-  }
-
-  .FormStatus-text-container {
-    width: 100%;
-  }
-
-  .FormStatus-step {
-    font-size: 80%;
-  }
-
-  .FormStatus-step-text {
-    font-size: 100%;
-  }
+  
 }
 
 // Small Phones
 @media only screen and (min-width:200px) and (max-width: 374px) {
-  
-  $form__width-mobile: 100px;
 
   .menu__container {
     margin-top: 20%;
@@ -1072,7 +1208,7 @@ transition: background-color .4s ease-in-out;
   }
 
   .menu__madeby {
-    height: 10%;
+    height: 5%;
   }
 
   .form__container {
@@ -1122,11 +1258,16 @@ transition: background-color .4s ease-in-out;
     font-size: 1em;
     
   }
-
+  
   .card__price-info {
-   margin-right: 10%;
-   text-align: end;
+    margin-right: 10%;
+    text-align: end;
   }
+  
+  .form__nav-btn {
+    padding: .5rem .75rem;
+  }
+
 
   .Form-header {
     font-size: calc(1.4rem);
@@ -1147,5 +1288,6 @@ transition: background-color .4s ease-in-out;
   .FormStatus-step-text {
     font-size: 100%;
   }
+
 
 }

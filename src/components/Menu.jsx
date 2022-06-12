@@ -23,7 +23,7 @@ const handleClick = () => {
               <h5 className="menu__subheader">Hi there!</h5>
               <h1 className="menu__header">About Me:</h1>
               <p>
-                I'm sweet-toothed foodie based out of <b>Westfield, IN.</b> I decorated my first cake with my Nana at 10 years old, and have loved baking ever since. Now I sell from-scratch baked goods across Hamilton County! 
+                I'm sweet-toothed foodie based out of <b>Westfield, IN.</b> I decorated my first cake with my Nana at 10 years old, and have loved baking ever since. Now I sell baked goods from scratch across Hamilton County! 
                 <br/><br/>
                 I'm still just a one-woman show, so if you place an order request online here, I'll get back to you as soon as I can to let you know if I can make your order for you. <i>(The earlier the order is placed, the more likely that I'll be able to make it for you!)</i> 
                 <br/><br/>
