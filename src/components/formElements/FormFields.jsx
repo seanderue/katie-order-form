@@ -9,6 +9,7 @@ import cookiesImg from '../../../public/cookies-thumbnail.jpeg'
 import cookieCakeImg from '../../../public/cookiecake-thumbnail.jpeg'
 import cupcakeImg from '../../../public/cupcake-thumbnail.jpeg'
 import cakeImg from '../../../public/cake-thumbnail.jpeg'
+import cakesicleImg from '../../../public/cakesicle-thumbnail.png'
 
 import FormRadioContainer from './FormRadioContainer'
 
@@ -75,7 +76,7 @@ export default function FormFields({ newType, setNewDescription, setNewQuantity,
     }]
 
     const cakesicleRadioArray = [{
-        thumbnail: cakeImg,
+        thumbnail: cakesicleImg,
         price: '$3 per cakesicle',
     }]
 
