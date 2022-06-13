@@ -1,7 +1,7 @@
 import React from 'react'
 import FormRadio from './FormRadio'
 
-export default function FormRadioContainer({radioArray, setState, state, prompt}) {
+export default function FormRadioContainer({radioArray, setState, state, prompt, enabled}) {
 
     const handleClick = (label) => {
         if (state === label) {
@@ -26,6 +26,8 @@ export default function FormRadioContainer({radioArray, setState, state, prompt}
                 key={index}
                 thumbnail={radio.thumbnail}
                 label={radio.label}
+                price={radio.price}
+                enabled={enabled}
                 selected={checkSelected(radio.label)}
                 onClick={() => handleClick(radio.label)}
                 />

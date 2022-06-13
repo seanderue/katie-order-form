@@ -850,6 +850,11 @@ color: #f54a4a;
   transition: all .2s ease-in-out;
 }
 
+.radio__thumbnail.disabled:hover {
+  border: 2px solid #878787;
+  cursor: auto;
+}
+
 .radio__label {
   font-size: calc(.5rem + 1vw);
   text-align: center;
@@ -1035,11 +1040,11 @@ transition: background-color .4s ease-in-out;
   }
 
   .card__img {
-    height:20vh;
+    height:16vh;
   }
 
   .card__img--hover{
-    height:20vh;
+    height:16vh;
   }
 
   .TypeButton-container {

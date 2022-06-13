@@ -12,7 +12,7 @@ export default function FormCustomization({newType, setNewDescription, setNewThe
             updateState={setNewFlavor}
         />
         <FormInput 
-            placeholder="What's the occasion? (If any 😉)"
+            placeholder="What's The Occasion? (If any 😉)"
             updateState={setNewOccasion}
         />
         <FormInput 
@@ -24,13 +24,11 @@ export default function FormCustomization({newType, setNewDescription, setNewThe
             updateState={setNewDescription}
         />
 
-        {/* //Change this to conditional rendering */}
         <input 
             className='form__field'
             type='number'
-            placeholder='Quantity' 
+            placeholder='Order Quantity' 
             onChange={e => setNewQuantity(e.target.value)}/>
-
 
         <label className="fileUpload__label" htmlFor="fileUpload">Reference Photo (optional)</label>
         <input

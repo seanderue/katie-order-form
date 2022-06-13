@@ -22,9 +22,9 @@ export default function Form({menuOpen}) {
     const [newEmail, setNewEmail] = useState('')
     const [newPhone, setNewPhone] = useState('')
     const [newPickup, setNewPickup] = useState('')
-    const [newPhoto, setNewPhoto] = useState('')
+    const [newImageUrl, setNewImageUrl] = useState('')
+    const [newTypeOption, setNewTypeOption] = useState('')
 
-    const [orders, setOrders] = useState([])
     const ordersCollectionRef = collection(db, "orders")
 
     const [alert, setAlert] = useState('')
@@ -34,6 +34,7 @@ export default function Form({menuOpen}) {
             {
             name: newName,
             type: newType,
+            typeOption: newTypeOption,
             flavor: newFlavor,
             quantity: newQuantity,
             description: newDescription,
@@ -42,10 +43,42 @@ export default function Form({menuOpen}) {
             email: newEmail,
             phone: newPhone,
             pickup: newPickup,
-            photo: newPhoto
+            photo: newImageUrl
         })
     }
 
+    const emailCollectionRef = collection(db, "mail")
+
+    const sendEmail = async () => {
+        await addDoc(emailCollectionRef,
+            {
+
+
+
+                to: ['seanderue@gmail.com', 'contact.katieannskitchen@gmail.com'],
+                message: {
+                    subject: 'You have a new order!',
+                    html: 
+                    `<h1>New order from ${newName}</h1>
+                    <p><b>Order type:</b> ${newType} (${newTypeOption}) </p>
+                    <p><b>Order flavor:</b> ${newFlavor}</p>
+                    <p><b>Order quantity:</b> ${newQuantity}</p>
+                    <p><b>Order description:</b> ${newDescription}</p>
+                    <p><b>Order theme:</b> ${newTheme}</p>
+                    <p><b>Order occasion:</b> ${newOccasion}</p>
+                    <p><b>Contact email:</b> ${newEmail}</p>
+                    <p><b>Contact phone:</b> ${newPhone}</p>
+                    <p><b>Preferred Pickup:</b> ${newPickup}</p>
+                    <p><b>Reference photo:</b> <a href="https://console.firebase.google.com/u/0/project/katie-order-form/storage/katie-order-form.appspot.com/files"> Can be here (I'll fix this later) </a></p>
+
+                    <p><i>(Proud of you ~Sean ❤️)!</i></p>
+                    `
+                }
+            }) 
+        .then(() => console.log("Queued email for delivery!"));
+    }
+
+    <img />
     const handleSubmit = (e) => {
         e.preventDefault()
 
@@ -60,6 +93,7 @@ export default function Form({menuOpen}) {
         }
 
         createOrder()
+        sendEmail()
         setPageNumber(pageNumber + 1)
         console.log("Order submitted")
     }
@@ -129,6 +163,8 @@ export default function Form({menuOpen}) {
                     {pageNumber === 2 && 
                         <FormFields
                             newType={newType}
+                            newTypeOption={newTypeOption}
+                            setNewTypeOption={setNewTypeOption}
                             setNewOccasion={setNewOccasion}
                             setNewTheme={setNewTheme}
                             setnewFlavor={setNewFlavor}
@@ -139,6 +175,7 @@ export default function Form({menuOpen}) {
                             setNewPhone={setNewPhone}
                             setNewPickup={setNewPickup}
                             setNewFlavor={setNewFlavor}
+                            setNewImageUrl={setNewImageUrl}
                         />}
                     {pageNumber === 3 &&
                     <FormSubmitted />}
