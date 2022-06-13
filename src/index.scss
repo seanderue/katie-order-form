@@ -1393,5 +1393,9 @@ transition: background-color .4s ease-in-out;
     font-size: 100%;
   }
 
+  .radio__thumbnail {
+    width: calc(2rem + 6vw);
+    height: calc(2rem + 6vw);
+  }
 
 }
