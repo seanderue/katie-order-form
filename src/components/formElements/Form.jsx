@@ -14,7 +14,7 @@ export default function Form({menuOpen}) {
 
     const [newName, setNewName] = useState('')
     const [newType, setNewType] = useState('')
-    const [newQuantity, setNewQuantity] = useState()
+    const [newQuantity, setNewQuantity] = useState(0)
     const [newFlavor, setNewFlavor] = useState('')
     const [newDescription, setNewDescription] = useState('')
     const [newTheme, setNewTheme] = useState('')
@@ -26,6 +26,8 @@ export default function Form({menuOpen}) {
 
     const [orders, setOrders] = useState([])
     const ordersCollectionRef = collection(db, "orders")
+
+    const [alert, setAlert] = useState('')
 
     const createOrder = async () => {
         await addDoc(ordersCollectionRef, 
@@ -46,26 +48,46 @@ export default function Form({menuOpen}) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+
+        if (pageNumber === 2 && hasEmptyFormFields) {
+            setAlert('Please fill out all fields')
+            return
+        }
+
+        if (pageNumber === 2 && newQuantity < 0 || newQuantity > 100 || newQuantity === '') {
+            setAlert('Please choose a valid quantity')
+            return
+        }
+
         createOrder()
         setPageNumber(pageNumber + 1)
         console.log("Order submitted")
     }
 
-    useEffect(() => {
-        const getOrders = async () => {
-            const data = await getDocs(ordersCollectionRef)
-            setOrders(data.docs.map((doc) => ({...doc.data(), id: doc.id })))
-            console.log(orders)
-        }
+    // Retrieving orders from Firebase
+    // useEffect(() => {
+    //     const getOrders = async () => {
+    //         const data = await getDocs(ordersCollectionRef)
+    //         setOrders(data.docs.map((doc) => ({...doc.data(), id: doc.id })))
+    //     }
 
-        getOrders()
+    //     getOrders()
 
-    }, [])
-    
+    // }, [])
+
+    const hasEmptyFormFields = newFlavor === '' || newDescription === '' || newName == '' || newTheme === '' || newEmail === '' || newPhone === '' || newPickup === ''
+
     const handleNextPage = (event) => {
         event.preventDefault()
+
+        if (newType === '') {
+            setAlert('Please select an item')
+            return
+        }
+
         if(pageNumber < 5) {
             setPageNumber(pageNumber + 1)
+            setAlert('')
         }
     }
 
@@ -96,7 +118,8 @@ export default function Form({menuOpen}) {
         <div className={menuOpen? 'form__container menu-open' : 'form__container'}>
             {/* <FormStatus
                 pageNumber = {pageNumber}/>*/}
-            {/* <Alert message={`${width} x ${height}`}/> */}
+            {alert !== '' && <Alert message={`${alert}`}/>}
+
                 <form className='form__group field'onSubmit={handleSubmit}>
                     {pageNumber === 1 &&
                         <TypeButtonSection 
@@ -122,7 +145,7 @@ export default function Form({menuOpen}) {
                     {<div className={pageNumber >= 2 ? 'form__button-container' : 'form__button-container right'}>
                         {pageNumber >= 2  && <button className='form__nav-btn' onClick={handleRestartPage}>Restart Order </button>}
                         {pageNumber <= 1 && <button className='form__nav-btn' onClick={handleNextPage}>Customize</button>}
-                        {pageNumber === 2 && <button className='form__nav-btn'>Submit Order</button>}
+                        {pageNumber === 2 && <button className='form__nav-btn'> Submit Order</button>}
                         </div>
                     }
                 </form>

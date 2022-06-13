@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import TypeButton from './TypeButton'
 
 
@@ -31,7 +31,11 @@ export default function TypeButtonSection({newType, setNewType}) {
   ]
 
   const handleClick = (name) => {
-    setNewType(name)
+    if (newType === name) {
+      setNewType('')
+    } else {
+      setNewType(name)
+    }
   }
 
   const checkSelected = (name) => {

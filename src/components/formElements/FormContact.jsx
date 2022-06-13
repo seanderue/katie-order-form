@@ -4,7 +4,7 @@ import FormInput from './FormInput'
 export default function FormContact({setNewName, setNewEmail, setNewPhone, setNewPickup}) {
 
     return (
-    <div className='form__input-container'>
+    <>
         <FormInput 
             placeholder="Full Name"
             updateState={setNewName}
@@ -24,7 +24,6 @@ export default function FormContact({setNewName, setNewEmail, setNewPhone, setNe
             updateState={setNewPickup}
 
         />
-        
-    </div>
+    </>
   )
 }

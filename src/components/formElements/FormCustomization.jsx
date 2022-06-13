@@ -7,37 +7,37 @@ export default function FormCustomization({newType, setNewDescription, setNewThe
 
   return (
       <>
-            <FormInput 
-                placeholder='Flavor(s)'
-                updateState={setNewFlavor}
-            />
-            <FormInput 
-                placeholder="What's the occasion?"
-                updateState={setNewOccasion}
-            />
-            <FormInput 
-                placeholder='Theme'
-                updateState={setNewTheme}
-            />            
-            <FormTextArea
-                placeholder="Description/Special Requests"
-                updateState={setNewDescription}
-            />
+        <FormInput 
+            placeholder='Flavor(s)'
+            updateState={setNewFlavor}
+        />
+        <FormInput 
+            placeholder="What's the occasion? (If any 😉)"
+            updateState={setNewOccasion}
+        />
+        <FormInput 
+            placeholder='Theme'
+            updateState={setNewTheme}
+        />            
+        <FormTextArea
+            placeholder="Description/Special Requests"
+            updateState={setNewDescription}
+        />
 
-            {/* //Change this to conditional rendering */}
-            <input 
-                className='form__field'
-                type='number'
-                placeholder='Quantity' 
-                onChange={e => setNewQuantity(e.target.value)}/>
+        {/* //Change this to conditional rendering */}
+        <input 
+            className='form__field'
+            type='number'
+            placeholder='Quantity' 
+            onChange={e => setNewQuantity(e.target.value)}/>
 
 
-            <label className="fileUpload__label" htmlFor="fileUpload">Reference Photo (optional)</label>
-            <input
-                className='form__field'
-                type="file"
-                id="fileUpload"
-                onChange={e => setImageUpload(e.target.files[0])}/>
+        <label className="fileUpload__label" htmlFor="fileUpload">Reference Photo (optional)</label>
+        <input
+            className='form__field'
+            type="file"
+            id="fileUpload"
+            onChange={e => setImageUpload(e.target.files[0])}/>
     </>
   )
 }
