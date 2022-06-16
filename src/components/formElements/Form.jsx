@@ -5,7 +5,7 @@ import TypeButtonSection from './TypeButtonSection'
 import FormFields from './FormFields'
 // import FormStatus from './FormStatus'
 import FormSubmitted from './FormSubmitted'
-import Alert from './Alert'
+import toast, { Toaster } from 'react-hot-toast'
 
 
 export default function Form({menuOpen}) {
@@ -27,7 +27,7 @@ export default function Form({menuOpen}) {
 
     const ordersCollectionRef = collection(db, "orders")
 
-    const [alert, setAlert] = useState('')
+    // const [alert, setAlert] = useState('')
 
     const createOrder = async () => {
         await addDoc(ordersCollectionRef, 
@@ -83,12 +83,14 @@ export default function Form({menuOpen}) {
         e.preventDefault()
 
         if (pageNumber === 2 && hasEmptyFormFields) {
-            setAlert('Please fill out all fields')
+            toast.error('Please fill out all fields')
+            // setAlert('Please fill out all fields')
             return
         }
 
         if (pageNumber === 2 && newQuantity < 0 || newQuantity > 100 || newQuantity === '') {
-            setAlert('Please choose a valid quantity')
+            toast.error('Please choose a valid quantity')
+            // setAlert('Please choose a valid quantity')
             return
         }
 
@@ -115,13 +117,14 @@ export default function Form({menuOpen}) {
         event.preventDefault()
 
         if (newType === '') {
-            setAlert('Please select an item')
+            toast.error('Please select an item')
+            // setAlert('Please select an item')
             return
         }
 
         if(pageNumber < 5) {
             setPageNumber(pageNumber + 1)
-            setAlert('')
+            // setAlert('')
         }
     }
 
@@ -149,10 +152,14 @@ export default function Form({menuOpen}) {
 
     return (
     <>
+        <Toaster
+            position='top-center'
+            reverseOrder={false}
+        />
         <div className={menuOpen? 'form__container menu-open' : 'form__container'}>
             {/* <FormStatus
                 pageNumber = {pageNumber}/>*/}
-            {alert !== '' && <Alert message={`${alert}`}/>}
+            {/* {alert !== '' && () => toast.error({alert})} */}
 
                 <form className='form__group field'onSubmit={handleSubmit}>
                     {pageNumber === 1 &&
