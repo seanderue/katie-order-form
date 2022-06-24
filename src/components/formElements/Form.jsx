@@ -3,9 +3,8 @@ import { db } from '../../firebase-config'
 import { collection, getDocs, addDoc } from 'firebase/firestore'
 import TypeButtonSection from './TypeButtonSection'
 import FormFields from './FormFields'
-// import FormStatus from './FormStatus'
-import FormSubmitted from './FormSubmitted'
 import toast, { Toaster } from 'react-hot-toast'
+import FormSubmitted from './FormSubmitted'
 
 
 export default function Form({menuOpen}) {
@@ -26,8 +25,6 @@ export default function Form({menuOpen}) {
     const [newTypeOption, setNewTypeOption] = useState('')
 
     const ordersCollectionRef = collection(db, "orders")
-
-    // const [alert, setAlert] = useState('')
 
     const createOrder = async () => {
         await addDoc(ordersCollectionRef, 
@@ -118,13 +115,11 @@ export default function Form({menuOpen}) {
 
         if (newType === '') {
             toast.error('Please select an item')
-            // setAlert('Please select an item')
             return
         }
 
         if(pageNumber < 5) {
             setPageNumber(pageNumber + 1)
-            // setAlert('')
         }
     }
 
@@ -159,7 +154,6 @@ export default function Form({menuOpen}) {
         <div className={menuOpen? 'form__container menu-open' : 'form__container'}>
             {/* <FormStatus
                 pageNumber = {pageNumber}/>*/}
-            {/* {alert !== '' && () => toast.error({alert})} */}
 
                 <form className='form__group field'onSubmit={handleSubmit}>
                     {pageNumber === 1 &&

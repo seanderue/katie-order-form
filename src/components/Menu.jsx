@@ -41,7 +41,7 @@ const handleClick = () => {
               <a data-tool-tip="Want to join my facebook group?" className="underline tooltip" href='https://www.facebook.com/katieannskitchen/'>Facebook</a>
             </div>
             <div className='menu__madeby'>
-                <a className='underline madeby' href='https://github.com/seanderue'> Made with <span className='heart'>&hearts;</span> by Sean DeRue</a>
+                <a className='underline madeby' href='https://seanderue.dev'> Made with <span className='heart'>&hearts;</span> by Sean DeRue</a>
             </div>
           </div>
         </div>
