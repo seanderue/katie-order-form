@@ -1396,6 +1396,7 @@ transition: background-color .4s ease-in-out;
   .radio__thumbnail {
     width: calc(2rem + 6vw);
     height: calc(2rem + 6vw);
+    user-select: none;
   }
 
 }
