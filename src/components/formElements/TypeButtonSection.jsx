@@ -20,7 +20,7 @@ export default function TypeButtonSection({newType, setNewType}) {
     { name: 'Cake',
       title: 'Cake',
       selected: false, 
-      price: '$40 - $65' },
+      price: '$45 - $65' },
 
     { name: 'Cupcake',
       title: 'Cupcakes',

@@ -53,12 +53,12 @@ export default function FormFields({ newType, setNewDescription, setNewQuantity,
     const cakeRadioArray = [{
         thumbnail: cakeImg,
         label: '6" Round',
-        price: '$40',
+        price: '$45',
         
     }, {
         thumbnail: cakeImg,
         label: '8" Round',
-        price: '$50'
+        price: '$55'
     }, {
         thumbnail: cakeImg,
         label: '10" Round',
