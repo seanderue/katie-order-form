@@ -1,2 +1,2 @@
 # katie-order-form
-A (WIP) beautiful form designed for a local baker
+A beautiful form designed for a local baker. Includes an auto-emailer upon submission, raining 3D cookies, form validation, and form conditional logic.
