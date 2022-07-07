@@ -53,7 +53,7 @@ export default function FormFields({ newType, setNewDescription, setNewQuantity,
     const cakeRadioArray = [{
         thumbnail: cakeImg,
         label: '6" Round',
-        price: '$38',
+        price: '$40',
         
     }, {
         thumbnail: cakeImg,
@@ -62,7 +62,7 @@ export default function FormFields({ newType, setNewDescription, setNewQuantity,
     }, {
         thumbnail: cakeImg,
         label: '10" Round',
-        price: '$60'
+        price: '$65'
     }]
 
     const cupcakeRadioArray = [{
