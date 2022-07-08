@@ -1,9 +1,9 @@
-import React from 'react'
+import React, {useEffect, useRef} from 'react'
 import TypeButton from './TypeButton'
 
+export default function TypeButtonSection({newType, setNewType, handleNextPage}) {
 
-
-export default function TypeButtonSection({newType, setNewType}) {
+  const isMounted = useRef(false)
 
   const types = [
     { name: 'Cookie',
@@ -31,11 +31,8 @@ export default function TypeButtonSection({newType, setNewType}) {
   ]
 
   const handleClick = (name) => {
-    if (newType === name) {
-      setNewType('')
-    } else {
       setNewType(name)
-    }
+      setTimeout(()=>handleNextPage(), 150)
   }
 
   const checkSelected = (name) => {
@@ -46,6 +43,15 @@ export default function TypeButtonSection({newType, setNewType}) {
       return false
     }
   }
+
+  useEffect(()=> {
+    if(isMounted.current) { 
+        console.log(newType)
+        handleNextPage()
+        console.log(isMounted.current)
+     }
+    else isMounted.current = true
+}, [newType])
 
   const TypeButtonElements = types.map((type, index) => {
     return (

@@ -25,7 +25,7 @@ const handleClick = () => {
               <p>
                 I'm sweet-toothed foodie based out of <b>Westfield, IN.</b> I decorated my first cake with my Nana at 10 years old, and have loved baking ever since. Now I sell baked goods from scratch across Hamilton County! 
                 <br/><br/>
-                I'm still just a one-woman show, so if you place an order request online here, I'll get back to you as soon as I can to let you know if I can make your order for you. <i>(The earlier the order is placed, the more likely that I'll be able to make it for you!)</i> 
+                I'm still just a one-woman show. If you place an order request online, I'll get back to you as soon as I can to let you know if I can make your order. <i>(The earlier the order is placed, the more likely that I'll be able to make it for you!)</i> 
                 <br/><br/>
                 {/* Don't get me wrong, I <b>love</b> a good box-cake, but you can't beat homemade. Baking industry secret: most bakeries use cake-mixes for their cakes! It's kind of sad, but it's just not as feasible to make it from scratch every time.
                 <br/><br/>

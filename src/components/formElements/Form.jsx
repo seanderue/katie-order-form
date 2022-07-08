@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { db } from '../../firebase-config'
 import { collection, getDocs, addDoc } from 'firebase/firestore'
 import TypeButtonSection from './TypeButtonSection'
@@ -49,9 +49,6 @@ export default function Form({menuOpen}) {
     const sendEmail = async () => {
         await addDoc(emailCollectionRef,
             {
-
-
-
                 to: ['seanderue@gmail.com', 'contact.katieannskitchen@gmail.com'],
                 message: {
                     subject: 'You have a new order!',
@@ -111,20 +108,32 @@ export default function Form({menuOpen}) {
     const hasEmptyFormFields = newFlavor === '' || newDescription === '' || newName == '' || newTheme === '' || newEmail === '' || newPhone === '' || newPickup === ''
 
     const handleNextPage = (event) => {
-        event.preventDefault()
-
         if (newType === '') {
-            toast.error('Please select an item')
             return
         }
 
         if(pageNumber < 5) {
-            setPageNumber(pageNumber + 1)
+            setTimeout(()=>setPageNumber(pageNumber + 1), 500)
         }
     }
 
     const handleRestartPage = (event) => {
         event.preventDefault()
+
+        setNewName('')
+        setNewType('')
+        setNewQuantity(0)
+        setNewFlavor('')
+        setNewDescription('')
+        setNewTheme('')
+        setNewOccasion('')
+        setNewEmail('')
+        setNewPhone('')
+        setNewPickup('')
+        setNewImageUrl('')
+        setNewTypeOption('')
+
+
         if(pageNumber > 1) {
             setPageNumber(1)
         }
@@ -145,6 +154,8 @@ export default function Form({menuOpen}) {
         }
     }, [])
 
+
+
     return (
     <>
         <Toaster
@@ -158,6 +169,7 @@ export default function Form({menuOpen}) {
                 <form className='form__group field'onSubmit={handleSubmit}>
                     {pageNumber === 1 &&
                         <TypeButtonSection 
+                            handleNextPage={handleNextPage}
                             newType={newType}
                             setNewType={setNewType}
                         />}
@@ -182,7 +194,7 @@ export default function Form({menuOpen}) {
                     <FormSubmitted />}
                     {<div className={pageNumber >= 2 ? 'form__button-container' : 'form__button-container right'}>
                         {pageNumber >= 2  && <button className='form__nav-btn' onClick={handleRestartPage}>Restart Order </button>}
-                        {pageNumber <= 1 && <button className='form__nav-btn' onClick={handleNextPage}>Customize</button>}
+                        {/* {pageNumber <= 1 && <button className='form__nav-btn' onClick={handleNextPage}>Customize</button>} */}
                         {pageNumber === 2 && <button className='form__nav-btn'> Submit Order</button>}
                         </div>
                     }
