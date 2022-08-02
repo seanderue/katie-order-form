@@ -17,7 +17,6 @@ export default function Form({menuOpen}) {
     const [newFlavor, setNewFlavor] = useState('')
     const [newDescription, setNewDescription] = useState('')
     const [newTheme, setNewTheme] = useState('')
-    const [newOccasion, setNewOccasion] = useState('')
     const [newEmail, setNewEmail] = useState('')
     const [newPhone, setNewPhone] = useState('')
     const [newPickup, setNewPickup] = useState('')
@@ -36,7 +35,6 @@ export default function Form({menuOpen}) {
             quantity: newQuantity,
             description: newDescription,
             theme: newTheme,
-            occasion: newOccasion,
             email: newEmail,
             phone: newPhone,
             pickup: newPickup,
@@ -59,7 +57,6 @@ export default function Form({menuOpen}) {
                     <p><b>Order quantity:</b> ${newQuantity}</p>
                     <p><b>Order description:</b> ${newDescription}</p>
                     <p><b>Order theme:</b> ${newTheme}</p>
-                    <p><b>Order occasion:</b> ${newOccasion}</p>
                     <p><b>Contact email:</b> ${newEmail}</p>
                     <p><b>Contact phone:</b> ${newPhone}</p>
                     <p><b>Preferred Pickup:</b> ${newPickup}</p>
@@ -105,7 +102,7 @@ export default function Form({menuOpen}) {
 
     // }, [])
 
-    const hasEmptyFormFields = newFlavor === '' || newDescription === '' || newName == '' || newTheme === '' || newEmail === '' || newPhone === '' || newPickup === ''
+    const hasEmptyFormFields = newFlavor === '' || newDescription === '' || newName == '' || newEmail === '' || newPhone === '' || newPickup === ''
 
     const handleNextPage = (event) => {
         if (newType === '') {
@@ -126,7 +123,6 @@ export default function Form({menuOpen}) {
         setNewFlavor('')
         setNewDescription('')
         setNewTheme('')
-        setNewOccasion('')
         setNewEmail('')
         setNewPhone('')
         setNewPickup('')
@@ -178,7 +174,6 @@ export default function Form({menuOpen}) {
                             newType={newType}
                             newTypeOption={newTypeOption}
                             setNewTypeOption={setNewTypeOption}
-                            setNewOccasion={setNewOccasion}
                             setNewTheme={setNewTheme}
                             setnewFlavor={setNewFlavor}
                             setNewDescription={setNewDescription}

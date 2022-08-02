@@ -13,7 +13,7 @@ import cakesicleImg from '../../../public/cakesicle-thumbnail.png'
 
 import FormRadioContainer from './FormRadioContainer'
 
-export default function FormFields({ newType, setNewDescription, setNewQuantity, setNewTheme, setNewOccasion, setNewFlavor, setNewName, setNewEmail, setNewPhone, setNewPickup, setNewImageUrl, setNewTypeOption, newTypeOption}) {
+export default function FormFields({ newType, setNewDescription, setNewQuantity, setNewTheme, setNewFlavor, setNewName, setNewEmail, setNewPhone, setNewPickup, setNewImageUrl, setNewTypeOption, newTypeOption}) {
     const [imageUpload, setImageUpload] = useState(null)
     // const [fileName, setFileName] = useState('')
 
@@ -131,7 +131,6 @@ export default function FormFields({ newType, setNewDescription, setNewQuantity,
             setNewDescription={setNewDescription}
             setNewQuantity={setNewQuantity}
             setNewTheme={setNewTheme}
-            setNewOccasion={setNewOccasion}
             setNewFlavor={setNewFlavor}
             setNewImageUrl={setNewImageUrl}
             setImageUpload={setImageUpload}

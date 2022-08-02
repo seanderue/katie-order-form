@@ -2,7 +2,7 @@ import React from 'react'
 import FormInput from './FormInput'
 import FormTextArea from './FormTextArea'
 
-export default function FormCustomization({newType, setNewDescription, setNewTheme, setNewQuantity, setNewOccasion, setNewFlavor, setImageUpload}) {
+export default function FormCustomization({newType, setNewDescription, setNewTheme, setNewQuantity, setNewFlavor, setImageUpload}) {
 
 
   return (
@@ -10,10 +10,6 @@ export default function FormCustomization({newType, setNewDescription, setNewThe
         <FormInput 
             placeholder='Flavor(s)'
             updateState={setNewFlavor}
-        />
-        <FormInput 
-            placeholder="What's The Occasion? (If any 😉)"
-            updateState={setNewOccasion}
         />
         <FormInput 
             placeholder='Theme'
